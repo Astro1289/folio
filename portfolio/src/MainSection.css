@@ -125,3 +125,29 @@
 .project-detail-container{
   margin-top: 1rem;
 }
+
+/* MainSection.css */
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-card {
+    grid-column: span 1;
+  }
+
+  .certificates-experience-container, .social-container {
+    grid-column: span 1;
+  }
+
+  .card-content img {
+    width: 100px; 
+    height: 100px;
+  }
+}
+
+.skills-icons img:hover {
+  transform: scale(1.1); 
+}

@@ -1,15 +1,13 @@
-/* Container for the tabs */
 .tabs {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-/* Style for each tab */
 .tab {
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border: 1px solid transparent; /* Default border is transparent */
+  border: 1px solid transparent; 
   border-radius: 8px;
   margin: 0 0.5rem;
   text-align: center;
@@ -18,17 +16,30 @@
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border 0.3s ease;
 }
 
-/* Style for the active tab */
 .tab.active {
   background-color: white;
   color: black;
-  transform: translateY(-4px); /* Lift the tab slightly */
-  border: 2px solid black; /* Add a border to the active tab */
+  transform: translateY(-4px); 
+  border: 2px solid black; 
 }
 
-/* Style for tabs on hover */
 .tab:hover {
   background-color: white;
   color: black;
-  transform: translateY(-4px); /* Lift the tab slightly */
+  transform: translateY(-4px); 
+}
+
+
+/* Tabs.css */
+
+@media (max-width: 768px) {
+  .tabs {
+    overflow-x: auto; 
+    white-space: nowrap; 
+  }
+
+  .tab {
+    flex: 1 1 auto; 
+    min-width: 100px; 
+  }
 }
