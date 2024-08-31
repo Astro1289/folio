@@ -1,78 +1,39 @@
-/* Container for all cards */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  gap: 1rem; /* Gap between cards */
-  padding: 1rem; /* Optional: Add padding around the grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  grid-template-rows: auto auto;
 }
 
-/* About Card spans two columns */
 .about-card {
   grid-column: span 2;
 }
 
-/* Skills Card spans one column */
 .skills-card {
   grid-column: span 1;
 }
 
-/* Certificates and Experience Container spans one column */
 .certificates-experience-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   grid-column: span 1;
 }
 
-/* Certificates and Experience Cards share flex space */
-.certificates-card,
-.experience-card {
-  flex: 1;
-}
-
-/* Social Links Container spans one column */
 .social-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   grid-column: span 1;
+  cursor: pointer;
 }
 
-/* Projects Card spans one column */
 .projects-card {
   grid-column: span 1;
 }
 
-/* Theme Toggle Card spans all three columns */
-.theme-toggle-card {
-  grid-column: span 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+.social-container img {
+  height: 8rem;
 }
 
-/* Image-Only Card (LinkedIn & GitHub) */
-.image-only-card {
-  padding: 0; /* Remove padding */
-  background-color: transparent; /* No background color */
-  border: none; /* Remove border */
-  box-shadow: none; /* Remove box-shadow */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: 100px; /* Set a fixed height for consistency */
-}
-
-/* Ensure images fit within image-only cards */
-.image-only-card img {
-  max-width: 100%;
-  max-height: 75%;
-  object-fit: contain; /* Prevent image distortion */
-}
-
-/* General Card Styles */
 .card {
   padding: 1rem;
   background-color: #333;
@@ -82,139 +43,85 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   opacity: 0;
-  transform: translateY(20px); /* Start below */
+  transform: translateY(20px);
 }
 
-/* Hover Effect for Cards */
 .card:hover {
-  transform: translateY(-10px) scale(1.05); /* Slight lift and scale */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-30px) scale(1.1) rotateY(10deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Reveal Animation */
 .card.reveal {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Dark Theme Styles */
-.dark-theme .card {
-  background-color: #333;
-  color: white;
-  border: 1px solid white;
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
 }
 
-/* Light Theme Styles */
-.light-theme .card {
-  background-color: #f0f0f0;
-  color: black;
-  border: 1px solid black;
-}
-
-/* Card Content Layout */
 .card-content {
   display: flex;
   align-items: center;
 }
 
-/* Profile Image Styling */
 .card-content img {
-  border-radius: 0; /* Square image */
+  border-radius: 0;
   margin-right: 1rem;
   width: 150px;
   height: 150px;
 }
 
-/* About Card Specific Image Styling */
-.about-card .card-content img {
-  width: 180px;
-  height: 180px;
-}
-
-/* Text Container in About Card */
-.about-card .card-content div {
-  max-width: 500px;
-}
-
-/* Certificates Card Links */
 .certificates-card a {
   color: #007bff;
   text-decoration: none;
   display: block;
   font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.certificates-card a:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-/* Certificate Link Container */
-.cert-link-container {
   margin-bottom: 0.5rem;
-}
-
-/* Skills Icons Layout */
-.skills-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
 .skills-icons img {
-  width: 50px;
   height: 50px;
+  margin: 0.5rem;
 }
 
-/* Experience Card Styles */
-.experience-card {
-  background-color: #2e3a4f;
-  color: #f0f0f0;
-  border: 1px solid #004080;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.image-only-card img {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
 }
 
-.experience-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  transform: translateY(-10px);
-}
-
-/* Experience List Styling */
-.experience-card ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
-.experience-card li {
-  margin-bottom: 0.5rem;
-}
-
-/* Experience Card Title Styling */
-.experience-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #e0e0e0;
-}
-
-/* Theme Toggle Button Styling */
-.theme-toggle-card button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #007bff;
+/* Dark Theme */
+.dark-theme {
+  background-color: #333;
   color: white;
-  transition: background-color 0.3s ease;
 }
 
-.theme-toggle-card button:hover {
-  background-color: #0056b3;
+/* Light Theme */
+.light-theme {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.image-only-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-only-card img {
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.project-container{
+  margin-top: 1rem;
+}
+
+.project-detail-container{
+  margin-top: 1rem;
 }

@@ -20,8 +20,8 @@
 
 /* Style for the active tab */
 .tab.active {
-  background-color: yellow; /* Set background color to yellow for active tab */
-  color: black; /* Change text color to black for better contrast */
+  background-color: white;
+  color: black;
   transform: translateY(-4px); /* Lift the tab slightly */
   border: 2px solid black; /* Add a border to the active tab */
 }

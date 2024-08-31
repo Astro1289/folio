@@ -1,27 +1,12 @@
 import React from 'react';
 import './Tabs.css';
 
-const Tabs = ({ activeTab, onChange }) => {
+const Tabs = ({ onChange }) => {
   return (
     <div className="tabs">
-      <div
-        className={`tab ${activeTab === 'all' ? 'active' : ''}`}
-        onClick={() => onChange('all')}
-      >
-        All
-      </div>
-      <div
-        className={`tab ${activeTab === 'about' ? 'active' : ''}`}
-        onClick={() => onChange('about')}
-      >
-        About
-      </div>
-      <div
-        className={`tab ${activeTab === 'work' ? 'active' : ''}`}
-        onClick={() => onChange('work')}
-      >
-        Work
-      </div>
+      <div className="tab" onClick={() => onChange('all')}>All</div>
+      <div className="tab" onClick={() => onChange('about')}>About</div>
+      <div className="tab" onClick={() => onChange('work')}>Work</div>
     </div>
   );
 };
