@@ -1,0 +1,34 @@
+/* Container for the tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Style for each tab */
+.tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid transparent; /* Default border is transparent */
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+}
+
+/* Style for the active tab */
+.tab.active {
+  background-color: yellow; /* Set background color to yellow for active tab */
+  color: black; /* Change text color to black for better contrast */
+  transform: translateY(-4px); /* Lift the tab slightly */
+  border: 2px solid black; /* Add a border to the active tab */
+}
+
+/* Style for tabs on hover */
+.tab:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-4px); /* Lift the tab slightly */
+}
